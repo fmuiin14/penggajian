@@ -1,6 +1,21 @@
 Penggajian
 
 1 Intro 
-Konfigurasi helper = url
+Konfigurasi helper = config/autoload/ helper url
 
 2 Persiapan
+
+3 database
+Konfigurasi database = config/autoload/ libraries database
+Buat database dengan 3 table, 
+
+data_jabatan 
+
+data_kehadiran 
+
+data_pegawai
+	Ada admin di data_pegawai, cek dengan status jabatan
+	
+Query data dengan $this->db->query(SELECT * FROM nama_table) dan WHERE nama_field = Admin
+
+Lalu data nya ditaruh di $data['namadata'] , ambil menggunakan num_rows() 

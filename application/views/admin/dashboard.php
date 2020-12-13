@@ -24,7 +24,7 @@
 							<!-- small box -->
 							<div class="small-box bg-info">
 								<div class="inner">
-									<h3>150</h3>
+									<h3><?= $pegawai ?></h3>
 
 									<p class="font-weight-bold">DATA PEGAWAI</p>
 								</div>
@@ -40,7 +40,7 @@
 							<!-- small box -->
 							<div class="small-box bg-success">
 								<div class="inner">
-									<h3>53</h3>
+									<h3><?= $admin ?></h3>
 
 									<p class="font-weight-bold">DATA ADMIN</p>
 								</div>
@@ -56,7 +56,7 @@
 							<!-- small box -->
 							<div class="small-box bg-warning">
 								<div class="inner">
-									<h3 class="text-white">44</h3>
+									<h3 class="text-white"><?= $jabatan ?></h3>
 
 									<p class="font-weight-bold text-white">DATA JABATAN</p>
 								</div>
@@ -72,7 +72,7 @@
 							<!-- small box -->
 							<div class="small-box bg-danger">
 								<div class="inner">
-									<h3>65</h3>
+									<h3><?= $kehadiran ?></h3>
 
 									<p class="font-weight-bold">DATA KEHADIRAN</p>
 								</div>
