@@ -2,3 +2,5 @@ Penggajian
 
 1 Intro 
 Konfigurasi helper = url
+
+2 Persiapan
