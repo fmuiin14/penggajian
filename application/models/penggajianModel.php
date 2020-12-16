@@ -6,6 +6,10 @@ class PenggajianModel extends CI_model {
         return $this->db->get($table);
     }
 
+    public function insertData($data, $table) {
+        $this->db->insert($table, $data);
+    }
+
 }
 
 ?>

@@ -20,7 +20,6 @@
 				<div class="col-12">
 					<div class="card">
 						<div class="card-header">
-							<h3 class="card-title">Responsive Hover Table</h3>
 
 							<div class="card-tools">
 								<div class="input-group input-group-sm" style="width: 150px;">
@@ -33,48 +32,52 @@
 									</div>
 								</div>
 							</div>
+							<a class="btn btn-primary mb-2" href="<?= base_url('admin/dataJabatan/tambahData') ?>"><i class="fas fa-plus"></i> Tambah Data</a>
+
+							<?= $this->session->flashdata('pesan') ?>
+
 						</div>
+
+
+
 						<!-- /.card-header -->
 						<div class="card-body table-responsive p-0">
 							<table class="table table-hover text-nowrap">
 								<thead>
 									<tr>
-										<th>ID</th>
-										<th>User</th>
-										<th>Date</th>
-										<th>Status</th>
-										<th>Reason</th>
+										<th class="text-center">No</th>
+										<th class="text-center">Nama Jabatan</th>
+										<th class="text-center">Gaji Pokok</th>
+										<th class="text-center">Tj. Transport</th>
+										<th class="text-center">Uang Makan</th>
+										<th class="text-center">Total</th>
+										<th class="text-center">Action</th>
 									</tr>
 								</thead>
 								<tbody>
+									<?php $no = 1; foreach($jabatan as $jabata) : ?>
 									<tr>
-										<td>183</td>
-										<td>John Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-success">Approved</span></td>
-										<td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+										<td><?= $no++; ?></td>
+										<td><?= $jabata->nama_jabatan; ?></td>
+										<td>Rp <?= number_format($jabata->gaji_pokok, 0, ',', '.'); ?></td>
+										<td>Rp <?= number_format($jabata->tj_transport, 0, ',', '.'); ?></span></td>
+										<td>Rp <?= number_format($jabata->uang_makan, 0, ',', '.'); ?></td>
+										<td>Rp
+											<?= number_format($jabata->gaji_pokok + $jabata->uang_makan + $jabata->tj_transport, 0, ',', '.'); ?>
+										</td>
+										<td>
+											<center>
+												<a class="btn btn-sm btn-primary"
+													href="<?= base_url('admin/dataJabatan/updateData/'.$jabata->id_jabatan) ?>">
+													<i class="fas fa-edit"></i> </a>
+												<a onclick="return confirm('Yakin hapus?')"
+													class="btn btn-sm btn-danger"
+													href="<?= base_url('admin/dataJabatan/deleteData/'.$jabata->id_jabatan) ?>">
+													<i class="fas fa-trash"></i> </a>
+											</center>
+										</td>
 									</tr>
-									<tr>
-										<td>219</td>
-										<td>Alexander Pierce</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-warning">Pending</span></td>
-										<td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-									</tr>
-									<tr>
-										<td>657</td>
-										<td>Bob Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-primary">Approved</span></td>
-										<td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-									</tr>
-									<tr>
-										<td>175</td>
-										<td>Mike Doe</td>
-										<td>11-7-2014</td>
-										<td><span class="tag tag-danger">Denied</span></td>
-										<td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-									</tr>
+									<?php endforeach; ?>
 								</tbody>
 							</table>
 						</div>

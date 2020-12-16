@@ -10,7 +10,7 @@
 				</li>
 			</ul>
 
-			<h4 class="m-0 text-dark">PT MUMU CERDAS PERKASA</h4>
+			<h4 class="m-0 text-dark custom-title">PT MUMU CERDAS PERKASA</h4>
 
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item dropdown dropdown-menu-right">
