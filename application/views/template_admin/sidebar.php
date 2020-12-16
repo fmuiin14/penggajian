@@ -79,7 +79,7 @@
 									</a>
 								</li>
 								<li class="nav-item">
-									<a href="<?= base_url('admin/data_jabatan') ?>" class="nav-link">
+									<a href="<?= base_url('admin/dataJabatan') ?>" class="nav-link">
 										<i class="fas fa-map-marked nav-icon"></i>
 										<p>Data Jabatan</p>
 									</a>
