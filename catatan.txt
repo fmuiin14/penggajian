@@ -25,3 +25,7 @@ Lalu data nya ditaruh di $data['namadata'] , ambil menggunakan num_rows()
 tambahkan form validation di config/autoload, lalu libraries form_validation, session
 Juga url helper tambahkan form
 untuk generate query pake ->RESULT()
+
+5. CRUD Data Pegawai 1
+Buat assets/photo
+Sampe form validation tidak false di controller tambahdataaksi

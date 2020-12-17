@@ -73,7 +73,7 @@
 							</a>
 							<ul class="nav nav-treeview">
 								<li class="nav-item">
-									<a href="<?= base_url('admin/data_pegawai') ?>" class="nav-link">
+									<a href="<?= base_url('admin/dataPegawai') ?>" class="nav-link">
 										<i class="fas fa-users nav-icon"></i>
 										<p>Data Pegawai</p>
 									</a>
