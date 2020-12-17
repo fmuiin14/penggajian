@@ -24,3 +24,4 @@ Lalu data nya ditaruh di $data['namadata'] , ambil menggunakan num_rows()
 	config/autoload, di dalam model tambahkan penggajianModel (supaya bisa call tanpa perlu dipanggil)
 tambahkan form validation di config/autoload, lalu libraries form_validation, session
 Juga url helper tambahkan form
+untuk generate query pake ->RESULT()

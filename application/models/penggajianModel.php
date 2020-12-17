@@ -10,6 +10,15 @@ class PenggajianModel extends CI_model {
         $this->db->insert($table, $data);
     }
 
+    public function updateData($table, $data, $where) {
+        $this->db->update($table, $data, $where);
+    }
+
+    public function deleteData($where, $table) {
+        $this->db->where($where);
+        $this->db->delete($table);
+    }
+
 }
 
 ?>
