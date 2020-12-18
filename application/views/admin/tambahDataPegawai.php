@@ -22,19 +22,19 @@
 							<form action="<?= base_url('admin/dataPegawai/tambahDataAksi') ?>" method="POST" enctype="multipart/form-data">
 
 								<div class="form-group">
-									<label for="nik">NIK</label>
+									<label>NIK</label>
 									<input type="text" name="nik" class="form-control">
 									<?= form_error('nik', '<div class="text-small text-danger"></div>') ?>
 								</div>
 
 								<div class="form-group">
-									<label for="namaPegawai">Nama Pegawai</label>
+									<label>Nama Pegawai</label>
 									<input type="text" name="nama_pegawai" class="form-control">
 									<?= form_error('nama_pegawai', '<div class="text-small text-danger"></div>') ?>
 								</div>
 
 								<div class="form-group">
-									<label for="jenis_kelamin">Jenis Kelamin</label>
+									<label>Jenis Kelamin</label>
 									<select name="jenis_kelamin" class="form-control">
 										<option value="">Pilih Jenis Kelamin</option>
 										<option value="Laki-Laki">Laki-Laki</option>
@@ -44,14 +44,20 @@
 								</div>
 
 								<div class="form-group">
-									<label for="jenis_kelamin">Jabatan</label>
+									<label>Jabatan</label>
 									<select name="jabatan" class="form-control">
 										<option value="">Pilih Jabatan</option>
 										<?php foreach ($all_jabatan as $jabata) : ?>
 										<option value="<?= $jabata->nama_jabatan ?>"><?= $jabata->nama_jabatan ?></option>
 										<?php endforeach; ?>
 									</select>
-									<?= form_error('jenis_kelamin', '<div class="text-small text-danger"></div>') ?>
+									<?= form_error('jabatan', '<div class="text-small text-danger"></div>') ?>
+								</div>
+
+								<div class="form-group">
+									<label>Tanggal Masuk</label>
+									<input type="date" name="tanggal_masuk" class="form-control">
+									<?= form_error('tanggal_masuk', '<div class="text-small text-danger"></div>') ?>
 								</div>
 
 								<div class="form-group">
