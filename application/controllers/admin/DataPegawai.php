@@ -70,6 +70,7 @@ class dataPegawai extends CI_Controller {
 		$where = array('id_pegawai' => $id);
 
 		$data['pegawai'] = $this->db->query("SELECT * FROM data_pegawai WHERE id_pegawai = '$id'")->result();
+
 		$data['all_jabatan'] = $this->penggajianModel->get_data('data_jabatan')->result();
 		$data['title'] = "Update Data Pegawai";
 		$this->load->view('template_admin/header', $data);
@@ -96,7 +97,7 @@ class dataPegawai extends CI_Controller {
 			if ($photo) {
 				$config['upload_path'] = './assets/photo';
 				$config['allowed_types'] = 'jpg|jpeg|png|tiff';
-				$this->load->libarary('upload', $config);
+				$this->load->library('upload', $config);
 				if($this->upload->do_upload('photo')) {
 					$photo = $this->upload->data('file_name');
 					$this->db->set('photo', $photo);
