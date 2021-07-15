@@ -48,7 +48,7 @@
 									<select class="form-control" name="tahun">
                                         <option value="" selected disabled>--Pilih Tahun--</option>
                                         <?php $tahun = date('Y');
-                                        for($i=2020;$i<$tahun+5;$i++) {
+                                        for($i=$tahun;$i<$tahun+5;$i++) {
                                         ?>
                                         <option value="<?= $i ?>"><?= $i ?></option>
                                         <?php } ?>
@@ -74,7 +74,7 @@
                     $tahun = $_GET['tahun'];
                     $bulantahun = $bulan.$tahun;
                 } else {
-                    $bulan = date('F');
+                    $bulan = date('m');
                     $tahun = date('Y');
                     $bulantahun = $bulan.$tahun;
                 }
@@ -83,6 +83,34 @@
                 Menampilkan Data Kehadiran Pegawai Bulan : <span class="font-weight-bold"><?= $bulan ?></span> Tahun : <span class="font-weight-bold"><?= $tahun ?></span>
             </div>
             
+			<table class="table table-bordered table-stripped">
+				<thead>
+				<tr>
+					<td class="text-center">No</td>
+					<td class="text-center">NIK</td>
+					<td class="text-center">Nama Pegawai</td>
+					<td class="text-center">Jenis Kelamin</td>
+					<td class="text-center">Jabatan</td>
+					<td class="text-center">Hadir</td>
+					<td class="text-center">Sakit</td>
+					<td class="text-center">Alpha</td>
+				</tr>
+				</thead>
+				<tbody>
+					<?php $no=1; foreach ($absensi as $absen) { ?>
+					<tr>
+						<td><?= $no++ ?></td>
+						<td><?= $absen->nik ?></td>
+						<td><?= $absen->nama_pegawai ?></td>
+						<td><?= $absen->jenis_kelamin ?></td>
+						<td><?= $absen->nama_jabatan ?></td>
+						<td><?= $absen->hadir ?></td>
+						<td><?= $absen->sakit ?></td>
+						<td><?= $absen->alpa ?></td>
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
 
 		</div>
 	</section>

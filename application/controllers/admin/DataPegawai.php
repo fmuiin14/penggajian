@@ -83,7 +83,8 @@ class dataPegawai extends CI_Controller {
 		$this->_rules();
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->updateData();
+			$id = $this->input->post('id_pegawai');
+			$this->updateData($id);
 		} else {
 			$id = $this->input->post('id_pegawai');
 			$nik = $this->input->post('nik');
