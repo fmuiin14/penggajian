@@ -101,6 +101,14 @@
 										<p>Data Absensi</p>
 									</a>
 								</li>
+
+								<li class="nav-item">
+									<a href="<?= base_url('admin/potonganGaji') ?>" class="nav-link">
+										<i class="fas fa-address-book nav-icon"></i>
+										<p>Setting Potongan Gaji</p>
+									</a>
+								</li>
+
 								<li class="nav-item">
 									<a href="<?= base_url('admin/data_jabatan') ?>" class="nav-link">
 										<i class="fas fa-dollar-sign nav-icon"></i>
