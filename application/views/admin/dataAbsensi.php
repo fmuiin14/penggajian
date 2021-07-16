@@ -57,7 +57,7 @@
 								
 								<button type="submit" class="btn btn-primary mb-2 mr-2 ml-auto"><i class="fas fa-eye"></i> Tampilkan Data</button>
                                 
-                                <a href="#" class="btn btn-success mb-2"><i class="fas fa-plus"></i> Input Kehadiran</a>
+                                <a href="<?= base_url('admin/dataAbsensi/inputAbsensi') ?>" class="btn btn-success mb-2"><i class="fas fa-plus"></i> Input Kehadiran</a>
 							</form>
 
 						</div>
@@ -82,6 +82,11 @@
             <div class="alert alert-info">
                 Menampilkan Data Kehadiran Pegawai Bulan : <span class="font-weight-bold"><?= $bulan ?></span> Tahun : <span class="font-weight-bold"><?= $tahun ?></span>
             </div>
+
+			<?php 
+			$jmlh = count($absensi);
+			if ($jmlh > 0) {
+			?>
             
 			<table class="table table-bordered table-stripped">
 				<thead>
@@ -111,6 +116,11 @@
 					<?php } ?>
 				</tbody>
 			</table>
+			<?php } else { ?>
+				<span class="badge badge-danger"><i class="fas fa-info-circle"></i>
+				Data masih kosong, silakan input data kehadiran pada bulan dan tahun yang dipilih
+			</span>
+			<?php } ?>
 
 		</div>
 	</section>
