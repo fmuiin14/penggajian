@@ -55,9 +55,27 @@
 									</select>
 								</div>
 
+								<?php
+								if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
+									$bulan = $_GET['bulan'];
+									$tahun = $_GET['tahun'];
+									$bulantahun = $bulan . $tahun;
+								} else {
+									$bulan = date('m');
+									$tahun = date('Y');
+									$bulantahun = $bulan . $tahun;
+								}
+								?>
+
 								<button type="submit" class="btn btn-primary mb-2 mr-2 ml-auto"><i class="fas fa-eye"></i> Tampilkan Data</button>
 
-								<a href="#" class="btn btn-success mb-2"><i class="fas fa-print"></i> Cetak Daftar Gaji</a>
+								<?php if (count($gaji) > 0) { ?>
+									<a href="<?= base_url('admin/dataPenggajian/cetakGaji?bulan=' . $bulan), '&tahun=' . $tahun ?>" class="btn btn-success mb-2"><i class="fas fa-print"></i> Cetak Daftar Gaji</a>
+								<?php } else { ?>
+									<button type="button" class="btn btn-success mb-2" data-toggle="modal" data-target="#modalnone"><i class="fas fa-print"></i> Cetak Daftar Gaji</button>
+								<?php } ?>
+
+
 							</form>
 
 						</div>
@@ -68,17 +86,6 @@
 				<!-- /.col -->
 			</div>
 
-			<?php
-			if ((isset($_GET['bulan']) && $_GET['bulan'] != '') && (isset($_GET['tahun']) && $_GET['tahun'] != '')) {
-				$bulan = $_GET['bulan'];
-				$tahun = $_GET['tahun'];
-				$bulantahun = $bulan . $tahun;
-			} else {
-				$bulan = date('m');
-				$tahun = date('Y');
-				$bulantahun = $bulan . $tahun;
-			}
-			?>
 			<div class="alert alert-info">
 				Menampilkan Data Kehadiran Pegawai Bulan : <span class="font-weight-bold"><?= $bulan ?></span> Tahun : <span class="font-weight-bold"><?= $tahun ?></span>
 			</div>
@@ -100,12 +107,12 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($potongan as $pot) { 
-					$pottt = $pot->jml_potongan;					
+					<?php foreach ($potongan as $pot) {
+						$pottt = $pot->jml_potongan;
 					} ?>
 					<?php $no = 1;
 					foreach ($gaji as $ga) { ?>
-					<?php $potongan = $ga->alpa * $pottt ?>
+						<?php $potongan = $ga->alpa * $pottt ?>
 						<tr>
 							<td><?= $no++ ?></td>
 							<td><?= $ga->nik ?></td>
@@ -129,4 +136,25 @@
 		</div>
 	</section>
 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalnone" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Informasi</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Data gaji masih kosong, silakan input absensi terlebih dahulu pada bulan dan tahun yang anda pilih.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
 </div>
