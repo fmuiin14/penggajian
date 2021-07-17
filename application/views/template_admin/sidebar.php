@@ -110,7 +110,7 @@
 								</li>
 
 								<li class="nav-item">
-									<a href="<?= base_url('admin/data_jabatan') ?>" class="nav-link">
+									<a href="<?= base_url('admin/dataPenggajian') ?>" class="nav-link">
 										<i class="fas fa-dollar-sign nav-icon"></i>
 										<p>Data Gaji</p>
 									</a>
