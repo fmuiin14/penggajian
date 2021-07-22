@@ -18,10 +18,10 @@
                 <div class="col-md-10">
                     <div class="card mx-auto" style="width:35%">
                         <div class="card-header bg-primary text-white text-center">
-                            Filter Laporan Gaji Pegawai
+                            Filter Laporan Absensi
                         </div>
 
-                        <form method="POST" action="<?= base_url('admin/laporanGaji/cetakLaporanGaji') ?>">
+                        <form method="POST" action="<?= base_url('admin/laporanAbsensi/cetakLaporanAbsensi') ?>">
                             <div class="card-body">
                                 <div class="form-group row">
                                     <label for="bulan" class="col-sm-3 col-form-label">Bulan</label>
@@ -58,7 +58,7 @@
                                     </div>
                                 </div>
 
-                                <button style="width:100%" type="submit" class="btn btn-primary">Cetak Laporan Gaji</button>
+                                <button style="width:100%" type="submit" class="btn btn-primary">Cetak Laporan Absensi</button>
 
                             </div>
                         </form>

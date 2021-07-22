@@ -134,7 +134,7 @@
 									</a>
 								</li>
 								<li class="nav-item">
-									<a href="<?= base_url('admin/data_jabatan') ?>" class="nav-link">
+									<a href="<?= base_url('admin/laporanAbsensi') ?>" class="nav-link">
 										<i class="far fa-circle nav-icon"></i>
 										<p>Laporan Absensi</p>
 									</a>
