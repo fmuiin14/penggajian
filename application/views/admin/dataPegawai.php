@@ -54,6 +54,7 @@
 										<th class="text-center">Tanggal Masuk</th>
 										<th class="text-center">Status</th>
 										<th class="text-center">Photo</th>
+										<th class="text-center">Hak Akses</th>
 										<th class="text-center">Action</th>
 									</tr>
 								</thead>
@@ -66,9 +67,15 @@
 										<td><?= $pegawa->jenis_kelamin ?></td>
 										<td><?= $pegawa->jabatan ?></td>
 										<td><?= $pegawa->tanggal_masuk ?></td>
-										<td><?= $pegawa->status ?></td>
+										<td><?= $pegawa->status ?></td> 
 										<td> <img src="<?= base_url('assets/photo/'.$pegawa->photo) ?>" width="60px;"
 												alt=""> </td>
+												<td><?php 
+												if ($pegawa->hak_akses == '1') {
+													echo 'Admin';
+													} else { 
+														echo 'Pegawai';
+														} ?></td>
 										<td>
 											<center>
 												<a class="btn btn-sm btn-primary"

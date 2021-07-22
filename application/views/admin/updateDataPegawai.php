@@ -36,6 +36,18 @@
 									</div>
 
 									<div class="form-group">
+										<label>Username</label>
+										<input type="text" name="username" class="form-control" value="<?= $pegawa->username ?>">
+										<?= form_error('username', '<div class="text-small text-danger"></div>') ?>
+									</div>
+
+									<div class="form-group">
+										<label>Password</label>
+										<input type="password" name="password" class="form-control" value="<?= $pegawa->password ?>">
+										<?= form_error('password', '<div class="text-small text-danger"></div>') ?>
+									</div>
+
+									<div class="form-group">
 										<label>Jenis Kelamin</label>
 										<select name="jenis_kelamin" class="form-control">
 											<option value="<?= $pegawa->jenis_kelamin ?>"><?= $pegawa->jenis_kelamin ?></option>
@@ -77,6 +89,17 @@
 									<div class="form-group">
 										<label>Photo</label>
 										<input type="file" name="photo" class="form-control">
+									</div>
+
+									<div class="form-group">
+										<label>Hak Akses</label>
+										<select name="hak_akses" class="form-control" id="hak_akses">
+											<option <?php if ($pegawa->hak_akses == '1') {
+												echo 'selected';
+												} ?> value="1">Admin</option>
+											<option <?php if ($pegawa->hak_akses == '2') {echo 'selected';} ?> value="2">Pegawai</option>
+										</select>
+										<?= form_error('hak_akses', '<div class="text-small text-danger"></div>') ?>
 									</div>
 
 									<button type="submit" class="btn btn-success">Update</button>

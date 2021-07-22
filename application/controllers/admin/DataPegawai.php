@@ -33,6 +33,9 @@ class dataPegawai extends CI_Controller {
 			$jenis_kelamin = $this->input->post('jenis_kelamin');
 			$tanggal_masuk = $this->input->post('tanggal_masuk');
 			$jabatan = $this->input->post('jabatan');
+			$hak_akses = $this->input->post('hak_akses');
+			$username = $this->input->post('username');
+			$password = md5($this->input->post('password'));
 			$status = $this->input->post('status');
 			// untuk photo menggunakan superglobal variabel dr php
 			$photo = $_FILES['photo']['name'];
@@ -55,6 +58,9 @@ class dataPegawai extends CI_Controller {
 				'jenis_kelamin' => $jenis_kelamin,
 				'tanggal_masuk' => $tanggal_masuk,
 				'jabatan' => $jabatan,
+				'hak_akses' => $hak_akses,
+				'username' => $username,
+				'password' => $password,
 				'status' => $status,
 				'photo' => $photo,
 				);
@@ -92,6 +98,9 @@ class dataPegawai extends CI_Controller {
 			$jenis_kelamin = $this->input->post('jenis_kelamin');
 			$tanggal_masuk = $this->input->post('tanggal_masuk');
 			$jabatan = $this->input->post('jabatan');
+			$hak_akses = $this->input->post('hak_akses');
+			$username = $this->input->post('username');
+			$password = md5($this->input->post('password'));
 			$status = $this->input->post('status');
 
 			$photo = $_FILES['photo']['name'];
@@ -112,6 +121,9 @@ class dataPegawai extends CI_Controller {
 				'nama_pegawai' => $nama_pegawai,
 				'jenis_kelamin' => $jenis_kelamin,
 				'jabatan' => $jabatan,
+				'hak_akses' => $hak_akses,
+				'username' => $username,
+				'password' => $password,
 				'tanggal_masuk' => $tanggal_masuk,
 				'status' => $status,
 		);
