@@ -20,7 +20,7 @@
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="#">Profile</a>
-						<a class="dropdown-item" href="<?= base_url('gantipassword') ?>">Ubah Password</a>
+						<a class="dropdown-item" href="<?= base_url('pegawai/gantiPassword') ?>">Ubah Password</a>
 						<a class="dropdown-item" href="<?= base_url('welcome/logout') ?>">Log Out</a>
 					</div>
 				</li>
