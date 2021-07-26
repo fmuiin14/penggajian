@@ -15,17 +15,17 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-10">
-                    <div class="card mx-auto" style="width:35%">
+                <div class="col-md-12">
+                    <div class="card mx-auto" style="width:80%">
                         <div class="card-header bg-primary text-white text-center">
-                            Filter Laporan Gaji Pegawai
+                            Filter Slip Gaji Pegawai
                         </div>
 
-                        <form method="POST" action="<?= base_url('admin/slipGaji/cetakSlipGaji') ?>">
+                        <form method="POST" action="<?= base_url('admin/SlipGaji/cetakSlipGaji') ?>">
                             <div class="card-body">
                                 <div class="form-group row">
-                                    <label for="bulan" class="col-sm-3 col-form-label">Bulan</label>
-                                    <div class="col-sm-9">
+                                    <label for="bulan" class="col-sm-4 col-form-label">Bulan</label>
+                                    <div class="col-sm-8">
                                         <select class="form-control" name="bulan">
                                             <option value="" selected disabled>--Pilih Bulan--</option>
                                             <option value="01">Januari</option>
@@ -45,8 +45,8 @@
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="tahun" class="col-sm-3 col-form-label">Tahun</label>
-                                    <div class="col-sm-9">
+                                    <label for="tahun" class="col-sm-4 col-form-label">Tahun</label>
+                                    <div class="col-sm-8">
                                         <select class="form-control" name="tahun">
                                             <option value="" selected disabled>--Pilih Tahun--</option>
                                             <?php $tahun = date('Y');
@@ -54,6 +54,19 @@
                                             ?>
                                                 <option value="<?= $i ?>"><?= $i ?></option>
                                             <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="tahun" class="col-sm-4 col-form-label">Nama Karyawan</label>
+                                    <div class="col-sm-8">
+                                        <select class="form-control" name="nama_pegawai">
+                                            <option value="" selected disabled>--Pilih Pegawai--</option>
+                                            <?php foreach ($pegawai as $p) { ?>
+                                                <option value="<?= $p->nama_pegawai ?>"><?= $p->nama_pegawai ?></option>
+                                            <?php } ?>
+
                                         </select>
                                     </div>
                                 </div>
