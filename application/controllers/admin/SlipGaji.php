@@ -25,12 +25,13 @@ class SlipGaji extends CI_Controller {
     
     public function cetakSlipGaji() {
         $data['title'] = "Cetak Slip Gaji";
+		$data['potongan'] = $this->penggajianModel->get_data('potongan_gaji')->result();
         $nama = $this->input->post('nama_pegawai');
         $bulan = $this->input->post('bulan');
         $tahun = $this->input->post('tahun');
         $bulantahun = $bulan.$tahun;
 
-        $data['print_slip'] = $this->db->query("SELECT data_pegawai.nik, data_pegawai.nama_pegawai, data_jabatan.nama_jabatan, data_jabatan.gaji_pokok, data_jabatan.tj_transport, data_jabatan.uang_makan, data_kehadiran.alpa FROM data_pegawai INNER JOIN data_kehadiran ON data_kehadiran.nik=data_pegawai.nik INNER JOIN data_jabatan ON data_jabatan.nama_jabatan=data_pegawai.jabatan WHERE data_kehadiran.bulan='$bulantahun' AND data_kehadiran.nama_pegawai='$nama'")->result();
+        $data['print_slip'] = $this->db->query("SELECT data_pegawai.nik, data_pegawai.nama_pegawai, data_jabatan.nama_jabatan, data_jabatan.gaji_pokok, data_jabatan.tj_transport, data_jabatan.uang_makan, data_kehadiran.alpa, data_kehadiran.bulan FROM data_pegawai INNER JOIN data_kehadiran ON data_kehadiran.nik=data_pegawai.nik INNER JOIN data_jabatan ON data_jabatan.nama_jabatan=data_pegawai.jabatan WHERE data_kehadiran.bulan='$bulantahun' AND data_kehadiran.nama_pegawai='$nama'")->result();
         
         $this->load->view('template_admin/header', $data);
         $this->load->view('admin/cetakSlipGaji', $data);

@@ -57,7 +57,7 @@
             <tr>
                 <td>Tahun</td>
                 <td>:</td>
-                <td><?= substr($ps->bulan, 2,4) ?></td>
+                <td><?= substr($ps->bulan, 2,5) ?></td>
             </tr>
         </table>
 
